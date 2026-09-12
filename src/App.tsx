@@ -245,9 +245,9 @@ export default function App() {
                 className="font-[Sora] font-extrabold leading-[1.05] tracking-tight mb-8"
                 style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
               >
-                <span className="block text-[#111111]">Web &</span>
-                <span className="block text-[#111111]">Mobile</span>
-                <span className="block text-[#111111]">App</span>
+                <span className="block text-[#111111]">Web</span>
+                <span className="block text-[#111111]">Developer &</span>
+                <span className="block text-[#111111]">Mobile App</span>
                 <span className="block text-[#111111]">Developer.</span>
               </h1>
               <div className="max-w-[520px] mb-10 flex flex-col gap-5">
