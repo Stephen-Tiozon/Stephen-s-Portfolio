@@ -247,8 +247,8 @@ export default function App() {
               >
                 <span className="block text-[#111111]">Web</span>
                 <span className="block text-[#111111]">Developer &</span>
-                <span className="block text-[#111111]">Mobile App</span>
-                <span className="block text-[#111111]">Developer.</span>
+                <span className="block text-[#A9A9A9]">Mobile App</span>
+                <span className="block text-[#A9A9A9]">Builder.</span>
               </h1>
               <div className="max-w-[520px] mb-10 flex flex-col gap-5">
                 <p className="font-[Manrope] text-[18px] leading-[1.6] text-[#111111]">
