@@ -1,0 +1,11 @@
+{
+  "title": "Stephen Tiozon | Portfolio",
+  "description": "Automatically analyzes and implements Markdown files to streamline content integration and enhance workflow efficiency for developers and writers.",
+  "robots": {
+    "index": true
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
