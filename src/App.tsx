@@ -530,17 +530,7 @@ function ProjectRow({
               </>
             )}
 
-            {/* Keyword pills — bottom right of media */}
-            <div className="absolute bottom-4 right-4 flex items-center gap-2">
-              {(project.keywords ?? []).map((kw, i) => (
-                <span key={i} className="flex items-center gap-2">
-                  {i > 0 && <span className="text-white/30 text-[10px]">·</span>}
-                  <span className="font-[Manrope] text-[10px] font-semibold tracking-[0.16em] uppercase text-white/50">
-                    {kw}
-                  </span>
-                </span>
-              ))}
-            </div>
+            {/* Keyword pills removed as requested */}
           </div>
         </div>
 
