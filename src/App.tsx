@@ -45,7 +45,7 @@ const PROJECTS = [
     tags: ["Kotlin", "Jetpack Compose", "Room Database"],
     keywords: ["Expense Tracking", "Personal Finance", "Offline-first"],
     mediaBg: "#2A3830",
-    image: "/PisoTrack_landing.PNG",
+    image: "/PisoTrack_landing_page.PNG",
     cta: { label: "View Project", href: "#" },
   },
 ];
