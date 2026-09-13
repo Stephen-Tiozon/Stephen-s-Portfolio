@@ -559,6 +559,8 @@ function ProjectRow({
           {/* CTA */}
           <a
             href={project.cta.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1 font-[Manrope] text-[12px] font-bold tracking-[0.16em] uppercase text-[#111111] border-b border-[#111111] pb-0.5 w-fit hover:text-[#245EE8] hover:border-[#245EE8] transition-colors focus:outline-none"
           >
             {project.cta.label} <span className="text-[11px]">↗</span>
