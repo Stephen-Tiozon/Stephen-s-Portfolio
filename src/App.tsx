@@ -20,7 +20,7 @@ const PROJECTS = [
     keywords: ["Academic Advising", "Course Evaluation", "Student Information System"],
     mediaBg: "#D9D7D0",
     image: "/PEAS_landingpage.PNG",
-    cta: { label: "View Project", href: "#" },
+    cta: { label: "View Project", href: "https://peas-alpha.vercel.app/" },
   },
   {
     num: "02",
