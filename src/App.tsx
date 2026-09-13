@@ -46,7 +46,7 @@ const PROJECTS = [
     keywords: ["Expense Tracking", "Personal Finance", "Offline-first"],
     mediaBg: "#2A3830",
     image: "/PisoTrack_landing_page.PNG",
-    cta: { label: "View Project", href: "#" },
+    cta: { label: "View Project", href: "https://piso-track.vercel.app/" },
   },
 ];
 
