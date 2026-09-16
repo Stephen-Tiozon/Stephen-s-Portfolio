@@ -48,6 +48,19 @@ const PROJECTS = [
     image: "/PisoTrack_landing_page.PNG",
     cta: { label: "View Project", href: "https://piso-track.vercel.app/" },
   },
+  {
+    num: "04",
+    category: "Web",
+    status: "LIVE PROJECT",
+    title: "Voices of Silang",
+    description:
+      "A web platform for Voices of Silang, a community choir based in Cavite, Philippines. Designed to showcase their members, upcoming performances, and events, while providing a portal for auditions and joining the choir.",
+    tags: ["React", "Tailwind CSS", "Web Design"],
+    keywords: ["Choir", "Landing Page", "Community"],
+    mediaBg: "#3D2B56",
+    image: "", // Placeholder, add image to public folder if needed
+    cta: { label: "View Project", href: "#" },
+  },
 ];
 
 const CAPABILITIES = [
