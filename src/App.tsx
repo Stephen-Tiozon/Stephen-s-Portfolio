@@ -54,12 +54,12 @@ const PROJECTS = [
     status: "LIVE PROJECT",
     title: "Voices of Silang",
     description:
-      "A web platform for Voices of Silang, a community choir based in Cavite, Philippines. Designed to showcase their members, upcoming performances, and events, while providing a portal for auditions and joining the choir.",
+      "A web platform for Voices of Silang, a community choir based in Silang, Cavite, Philippines. Designed to showcase their members, upcoming performances, and events, while providing a portal for auditions and joining the choir.",
     tags: ["React", "Tailwind CSS", "Web Design"],
     keywords: ["Choir", "Landing Page", "Community"],
     mediaBg: "#3D2B56",
     image: "/VoicesOfSilang.PNG",
-    cta: { label: "View Project", href: "#" },
+    cta: { label: "View Project", href: "https://voices-of-silang.vercel.app/#" },
   },
 ];
 
