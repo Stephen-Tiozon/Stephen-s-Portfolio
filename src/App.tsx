@@ -58,7 +58,7 @@ const PROJECTS = [
     tags: ["React", "Tailwind CSS", "Web Design"],
     keywords: ["Choir", "Landing Page", "Community"],
     mediaBg: "#3D2B56",
-    image: "", // Placeholder, add image to public folder if needed
+    image: "/VoicesOfSilang.PNG",
     cta: { label: "View Project", href: "#" },
   },
 ];
