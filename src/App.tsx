@@ -59,7 +59,7 @@ const PROJECTS = [
     keywords: ["Choir", "Landing Page", "Community"],
     mediaBg: "#3D2B56",
     image: "/VoicesOfSilang.PNG",
-    cta: { label: "View Project", href: "https://voices-of-silang.vercel.app/#" },
+    cta: { label: "View Project", href: "https://vos-two.vercel.app/" },
   },
 ];
 
