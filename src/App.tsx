@@ -90,7 +90,7 @@ const PROJECTS: Project[] = [
     keywords: ["Case Management", "Assessments", "Tracking"],
     mediaBg: "#151B2B",
     image: "/cads_1.PNG",
-    screenshots: ["/cads_1.PNG", "/cads_2.PNG"],
+    screenshots: ["/cads_1.PNG", "/cads_2.PNG", "/cads_3.PNG","/cads_4.PNG","/cads_5.PNG",],
     cta: { label: "View Screenshots", href: "#", action: "gallery" },
   },
 ];
