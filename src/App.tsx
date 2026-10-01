@@ -89,8 +89,8 @@ const PROJECTS: Project[] = [
     tags: ["React", "Tailwind CSS", "Web Design"],
     keywords: ["Case Management", "Assessments", "Tracking"],
     mediaBg: "#151B2B",
-    image: "/cads_1.png",
-    screenshots: ["/cads_1.png", "/cads_2.png"],
+    image: "/cads_1.PNG",
+    screenshots: ["/cads_1.PNG", "/cads_2.PNG"],
     cta: { label: "View Screenshots", href: "#", action: "gallery" },
   },
 ];
