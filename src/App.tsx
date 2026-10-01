@@ -8,7 +8,25 @@ const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
-const PROJECTS = [
+type Project = {
+  num: string;
+  category: string;
+  status: string;
+  title: string;
+  description: string;
+  tags: string[];
+  keywords: string[];
+  mediaBg: string;
+  image: string;
+  screenshots?: string[];
+  cta: {
+    label: string;
+    href: string;
+    action?: "link" | "gallery";
+  };
+};
+
+const PROJECTS: Project[] = [
   {
     num: "01",
     category: "Web",
@@ -60,6 +78,20 @@ const PROJECTS = [
     mediaBg: "#3D2B56",
     image: "/VoicesOfSilang.PNG",
     cta: { label: "View Project", href: "https://vos-two.vercel.app/" },
+  },
+  {
+    num: "05",
+    category: "Web",
+    status: "UNDER CONSTRUCTION",
+    title: "CADS",
+    description:
+      "The Computerized Assessment of Discernment System (CADS) streamlines case management, assessments, and tracking for Children in Conflict with the Law.",
+    tags: ["React", "Tailwind CSS", "Web Design"],
+    keywords: ["Case Management", "Assessments", "Tracking"],
+    mediaBg: "#151B2B",
+    image: "/cads_1.png",
+    screenshots: ["/cads_1.png", "/cads_2.png"],
+    cta: { label: "View Screenshots", href: "#", action: "gallery" },
   },
 ];
 
@@ -502,9 +534,22 @@ function ProjectRow({
   project,
   isLast,
 }: {
-  project: (typeof PROJECTS)[0];
+  project: Project;
   isLast: boolean;
 }) {
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handleNext = () => {
+    if (!project.screenshots) return;
+    setCurrentImageIndex((prev) => (prev + 1) % project.screenshots!.length);
+  };
+
+  const handlePrev = () => {
+    if (!project.screenshots) return;
+    setCurrentImageIndex((prev) => (prev - 1 + project.screenshots!.length) % project.screenshots!.length);
+  };
+
   return (
     <div className={`pt-6 pb-14 ${!isLast ? "border-b border-[#D9D7D0]" : ""}`}>
       {/* Row header: number/category + status */}
@@ -570,16 +615,76 @@ function ProjectRow({
             ))}
           </div>
           {/* CTA */}
-          <a
-            href={project.cta.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 font-[Manrope] text-[12px] font-bold tracking-[0.16em] uppercase text-[#111111] border-b border-[#111111] pb-0.5 w-fit hover:text-[#245EE8] hover:border-[#245EE8] transition-colors focus:outline-none"
-          >
-            {project.cta.label} <span className="text-[11px]">↗</span>
-          </a>
+          {project.cta.action === "gallery" ? (
+            <button
+              onClick={() => setIsGalleryOpen(true)}
+              className="inline-flex items-center gap-1 font-[Manrope] text-[12px] font-bold tracking-[0.16em] uppercase text-[#111111] border-b border-[#111111] pb-0.5 w-fit hover:text-[#245EE8] hover:border-[#245EE8] transition-colors focus:outline-none"
+            >
+              {project.cta.label} <span className="text-[11px]">↗</span>
+            </button>
+          ) : (
+            <a
+              href={project.cta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-[Manrope] text-[12px] font-bold tracking-[0.16em] uppercase text-[#111111] border-b border-[#111111] pb-0.5 w-fit hover:text-[#245EE8] hover:border-[#245EE8] transition-colors focus:outline-none"
+            >
+              {project.cta.label} <span className="text-[11px]">↗</span>
+            </a>
+          )}
         </div>
       </div>
+
+      {/* Gallery Modal */}
+      {isGalleryOpen && project.screenshots && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#111111]/95 p-4 md:p-10 backdrop-blur-sm">
+          <button
+            onClick={() => setIsGalleryOpen(false)}
+            className="absolute top-6 right-6 text-white hover:text-[#245EE8] transition-colors focus:outline-none p-2"
+            aria-label="Close gallery"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+
+          {project.screenshots.length > 1 && (
+            <button
+              onClick={handlePrev}
+              className="absolute left-4 md:left-10 text-white hover:text-[#245EE8] transition-colors focus:outline-none p-2"
+              aria-label="Previous image"
+            >
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+          )}
+
+          <div className="max-w-6xl w-full flex flex-col items-center">
+            <img 
+              src={project.screenshots[currentImageIndex]} 
+              alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+              className="max-w-full max-h-[80vh] object-contain border border-white/10 shadow-2xl"
+            />
+            <div className="mt-6 text-[#9AA1AD] font-[Manrope] text-[13px] font-medium tracking-widest uppercase">
+              {currentImageIndex + 1} / {project.screenshots.length}
+            </div>
+          </div>
+
+          {project.screenshots.length > 1 && (
+            <button
+              onClick={handleNext}
+              className="absolute right-4 md:right-10 text-white hover:text-[#245EE8] transition-colors focus:outline-none p-2"
+              aria-label="Next image"
+            >
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }
