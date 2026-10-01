@@ -316,7 +316,7 @@ export default function App() {
                   Get in touch
                 </a>
                 <a
-                  href="/Resume_Stephen-Tiozon.pdf"
+                  href="/Resume-Stephen-Tiozon.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 border border-[#D9D7D0] hover:border-[#111111] text-[#3B414B] hover:text-[#111111] font-[Manrope] text-[13px] font-semibold tracking-wide px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-[#245EE8]"
