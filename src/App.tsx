@@ -51,7 +51,8 @@ const PROJECTS: Project[] = [
     keywords: ["Automated", "Study plan", "CSP-Greedy", "Systems Analysis"],
     mediaBg: "#1C1F22",
     image: "/ASPLAN_landing_page.PNG",
-    cta: { label: "View Project", href: "#" },
+    screenshots: ["/ASPLAN_landing_page.PNG","/asplan_2.PNG","/asplan_3.PNG","/asplan_4.PNG","asplan_5.PNG","asplan_6.PNG","asplan_7.PNG","asplan_8.PNG","asplan_9.PNG"],
+    cta: { label: "View Screenshots", href: "#", action: "gallery" },
   },
   {
     num: "03",
