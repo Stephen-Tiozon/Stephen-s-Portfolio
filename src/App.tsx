@@ -8,6 +8,13 @@ const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
+const CATEGORIES = [
+  { id: "all", label: "All Work" },
+  { id: "shopify", label: "Shopify / E-Commerce" },
+  { id: "web", label: "Web Applications" },
+  { id: "mobile", label: "Mobile Apps" },
+];
+
 type Project = {
   num: string;
   category: string;
@@ -94,12 +101,48 @@ const PROJECTS: Project[] = [
     screenshots: ["/cads_1.PNG", "/cads_2.PNG", "/cads_3.PNG","/cads_4.PNG","/cads_5.PNG","/cads_6.PNG","/cads_7.PNG","/cads_8.PNG","/cads_9.PNG","/cads_10.PNG"],
     cta: { label: "View Screenshots", href: "#", action: "gallery" },
   },
+  {
+    num: "06",
+    category: "Shopify",
+    status: "LIVE STORE",
+    title: "Shopify E-Commerce Store",
+    description:
+      "A high-converting, responsive Shopify storefront developed with custom Liquid sections, bespoke product page layouts, seamless slide-out cart drawer, and mobile-first speed optimization.",
+    tags: ["Shopify Liquid", "Theme Customization", "CSS & JavaScript", "E-Commerce"],
+    keywords: ["Shopify Store", "Custom Liquid", "Online Retail", "Theme Development"],
+    mediaBg: "#162326",
+    image: "",
+    cta: { label: "Visit Store", href: "https://your-shopify-store.com" },
+  },
+  {
+    num: "07",
+    category: "Shopify",
+    status: "CLIENT STORE",
+    title: "Brand E-Commerce Storefront",
+    description:
+      "Custom Shopify store setup and theme customization featuring dynamic collection filtering, third-party app integrations (reviews & marketing), and conversion-optimized checkout experience.",
+    tags: ["Shopify Liquid", "App Integrations", "Conversion Optimization", "CSS"],
+    keywords: ["E-Commerce", "Shopify", "Store Setup", "App Integration"],
+    mediaBg: "#2A231C",
+    image: "",
+    cta: { label: "Visit Store", href: "https://your-shopify-store.com" },
+  },
 ];
 
 const CAPABILITIES = [
   {
     area: "Web Development",
     items: ["React & Next.js", "Tailwind CSS", "PHP & MySQL", "JavaScript", "HTML & CSS"],
+  },
+  {
+    area: "Shopify & E-Commerce",
+    items: [
+      "Shopify Liquid",
+      "Theme Customization",
+      "Store Setup & Launch",
+      "App Integrations",
+      "Conversion & Speed Optimization",
+    ],
   },
   {
     area: "Mobile & Backend",
@@ -186,8 +229,13 @@ function useActiveSection() {
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const active = useActiveSection();
   const menuRef = useRef<HTMLDivElement>(null);
+
+  const filteredProjects = selectedCategory === "all"
+    ? PROJECTS
+    : PROJECTS.filter((p) => p.category.toLowerCase() === selectedCategory.toLowerCase());
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
@@ -351,7 +399,7 @@ export default function App() {
         {/* Work */}
         <section id="work" className="max-w-[1200px] mx-auto px-6 md:px-12 py-20 md:py-28">
           {/* Section header */}
-          <div className="flex items-center justify-between mb-14">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div className="flex items-center gap-2">
               <span className="font-[Manrope] text-[11px] text-[#245EE8]">↳</span>
               <span className="font-[Manrope] text-[11px] font-bold tracking-[0.2em] uppercase text-[#111111]">
@@ -359,14 +407,55 @@ export default function App() {
               </span>
             </div>
             <span className="font-[Manrope] text-[11px] font-semibold tracking-[0.18em] uppercase text-[#9AA1AD]">
-              0{PROJECTS.length} Selected Projects
+              {String(filteredProjects.length).padStart(2, "0")} {selectedCategory === "all" ? "Total Projects" : "Projects"}
             </span>
           </div>
 
+          {/* Category Filter Tabs */}
+          <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-12 border-b border-[#D9D7D0] pb-6">
+            {CATEGORIES.map((cat) => {
+              const isSelected = selectedCategory === cat.id;
+              const count = cat.id === "all"
+                ? PROJECTS.length
+                : PROJECTS.filter((p) => p.category.toLowerCase() === cat.id).length;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id)}
+                  className={`font-[Manrope] text-[12px] font-bold tracking-[0.12em] uppercase px-4 py-2.5 transition-all duration-200 flex items-center gap-2.5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#245EE8] border ${
+                    isSelected
+                      ? "bg-[#111111] text-white border-[#111111] shadow-sm"
+                      : "bg-transparent text-[#737B88] border-transparent hover:text-[#111111] hover:border-[#D9D7D0] hover:bg-[#EBE9E1]/50"
+                  }`}
+                >
+                  <span>{cat.label}</span>
+                  <span
+                    className={`text-[10px] px-2 py-0.5 rounded-full font-mono transition-colors ${
+                      isSelected
+                        ? "bg-[#245EE8] text-white"
+                        : "bg-[#D9D7D0] text-[#111111]"
+                    }`}
+                  >
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
           <div className="flex flex-col">
-            {PROJECTS.map((project, i) => (
-              <ProjectRow key={project.num} project={project} isLast={i === PROJECTS.length - 1} />
-            ))}
+            {filteredProjects.length > 0 ? (
+              filteredProjects.map((project, i) => (
+                <ProjectRow key={project.num} project={project} isLast={i === filteredProjects.length - 1} />
+              ))
+            ) : (
+              <div className="py-20 text-center border border-dashed border-[#D9D7D0] my-8">
+                <p className="font-[Sora] font-semibold text-[16px] text-[#111111] mb-2">No projects found</p>
+                <p className="font-[Manrope] text-[13px] text-[#737B88]">
+                  No projects currently listed under this category.
+                </p>
+              </div>
+            )}
           </div>
         </section>
 
@@ -380,7 +469,7 @@ export default function App() {
               <div className="flex-1 border-t border-[#3B414B] mt-1" />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8">
               {CAPABILITIES.map((cap) => (
                 <div key={cap.area}>
                   <h3 className="font-[Sora] font-semibold text-[14px] text-white mb-5 tracking-tight">
