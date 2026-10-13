@@ -112,7 +112,8 @@ const PROJECTS: Project[] = [
     keywords: ["Shopify Store", "Custom Liquid", "Online Retail", "Theme Development"],
     mediaBg: "#162326",
     image: "",
-    cta: { label: "Visit Store", href: "https://your-shopify-store.com" },
+    screenshots: ["/shopify_1.PNG", "/shopify_2.PNG", "/shopify_3.PNG"],
+    cta: { label: "View Screenshots", href: "#", action: "gallery" },
   },
   {
     num: "07",
@@ -125,7 +126,8 @@ const PROJECTS: Project[] = [
     keywords: ["E-Commerce", "Shopify", "Store Setup", "App Integration"],
     mediaBg: "#2A231C",
     image: "",
-    cta: { label: "Visit Store", href: "https://your-shopify-store.com" },
+    screenshots: ["/shopify2_1.PNG", "/shopify2_2.PNG", "/shopify2_3.PNG"],
+    cta: { label: "View Screenshots", href: "#", action: "gallery" },
   },
 ];
 
