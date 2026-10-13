@@ -119,14 +119,14 @@ const PROJECTS: Project[] = [
     num: "07",
     category: "Shopify",
     status: "CLIENT STORE",
-    title: "Brand E-Commerce Storefront",
+    title: "MAISON OLEA",
     description:
-      "Custom Shopify store setup and theme customization featuring dynamic collection filtering, third-party app integrations (reviews & marketing), and conversion-optimized checkout experience.",
+      "A premium food destination merging fine dining with an artisanal pantry. Features seamless online ordering for ready meals, signature sauces, and curated gourmet merchandise through a stunning visual experience.",
     tags: ["Shopify Liquid", "App Integrations", "Conversion Optimization", "CSS"],
     keywords: ["E-Commerce", "Shopify", "Store Setup", "App Integration"],
     mediaBg: "#2A231C",
-    image: "",
-    cta: { label: "View Screenshots", href: "#", action: "gallery" },
+    image: "/maison_1.PNG",
+    cta: { label: "View Live Project", href: "https://premium-ecommerce-homepage-design.vercel.app/" },
   },
 ];
 
@@ -350,7 +350,7 @@ export default function App() {
                   I'm a web and mobile app developer focused on building reliable systems and continuously expanding my understanding of software development.
                 </p>
                 <p className="font-[Manrope] text-[15px] leading-relaxed text-[#737B88]">
-                  My hands-on experience centers on modern frontend tools like React, Next.js, and Tailwind CSS, alongside backend technologies like PHP and MySQL. I also build mobile interfaces and robust data layers using Kotlin, Jetpack Compose, Web APIs, and REST APIs.
+                  My hands-on experience centers on modern frontend tools like React, Next.js, and Tailwind CSS, alongside backend technologies like PHP and MySQL. I also build mobile interfaces and robust data layers using React Native, Expo, Web APIs, and REST APIs.
                 </p>
                 <p className="font-[Manrope] text-[15px] leading-relaxed text-[#737B88]">
                   I use AI-assisted development as part of my workflow for research, implementation, debugging, and iteration — while taking ownership of architecture, technical decisions, validation, and the final product.
@@ -377,7 +377,7 @@ export default function App() {
               <div className="mt-12 flex flex-wrap gap-6 text-[12px] text-[#9AA1AD] font-[Manrope] font-medium tracking-wide uppercase">
                 <span>Bulihan, Silang Cavite</span>
                 <span className="text-[#D9D7D0]">·</span>
-                <a href="https://linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener noreferrer" className="hover:text-[#245EE8] transition-colors">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/stephen-tiozon-6b0121360" target="_blank" rel="noopener noreferrer" className="hover:text-[#245EE8] transition-colors">LinkedIn</a>
                 <span className="text-[#D9D7D0]">·</span>
                 <a href="https://github.com/Stephen-Tiozon" target="_blank" rel="noopener noreferrer" className="hover:text-[#245EE8] transition-colors">GitHub</a>
               </div>
@@ -590,8 +590,8 @@ export default function App() {
                   Email me ↗
                 </a>
                 <div className="flex gap-5 text-[12px] font-[Manrope] font-medium tracking-wide uppercase text-[#9AA1AD]">
-                  <a href="#" className="hover:text-[#245EE8] transition-colors focus:outline-none focus:text-[#245EE8]">
-                    Add LinkedIn URL
+                  <a href="https://www.linkedin.com/in/stephen-tiozon-6b0121360" target="_blank" rel="noopener noreferrer" className="hover:text-[#245EE8] transition-colors focus:outline-none focus:text-[#245EE8]">
+                    LinkedIn
                   </a>
                   <a href="https://github.com/Stephen-Tiozon" target="_blank" rel="noopener noreferrer" className="hover:text-[#245EE8] transition-colors focus:outline-none focus:text-[#245EE8]">
                     GitHub
