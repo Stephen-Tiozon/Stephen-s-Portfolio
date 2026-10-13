@@ -147,7 +147,7 @@ const CAPABILITIES = [
   },
   {
     area: "Mobile & Backend",
-    items: ["Kotlin", "Jetpack Compose", "REST APIs", "Web APIs", "Systems Analysis"],
+    items: ["React Native", "Expo", "REST APIs", "Web APIs", "Systems Analysis"],
   },
   {
     area: "IT & Infrastructure",
