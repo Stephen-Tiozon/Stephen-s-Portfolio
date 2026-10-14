@@ -113,7 +113,7 @@ const PROJECTS: Project[] = [
     mediaBg: "#162326",
     image: "/shopify_1.PNG",
     screenshots: ["/shopify_1.PNG", "/shopify_2.PNG", "/shopify_3.PNG", "/shopify_4.PNG", "/shopify_5.PNG"],
-    cta: { label: "View Screenshots", href: "#", action: "gallery" },
+    cta: { label: "View Live Project", href: "https://atelier-nor-lac.vercel.app/" },
   },
   {
     num: "07",
