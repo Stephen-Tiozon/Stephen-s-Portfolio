@@ -13,6 +13,7 @@ const CATEGORIES = [
   { id: "shopify", label: "Shopify / E-Commerce" },
   { id: "web", label: "Web Applications" },
   { id: "mobile", label: "Mobile Apps" },
+  { id: "design", label: "UI/UX & Design" },
 ];
 
 type Project = {
@@ -127,6 +128,34 @@ const PROJECTS: Project[] = [
     mediaBg: "#2A231C",
     image: "/maison_1.PNG",
     cta: { label: "View Live Project", href: "https://premium-ecommerce-homepage-design.vercel.app/" },
+  },
+  {
+    num: "08",
+    category: "Design",
+    status: "UI/UX CONCEPT",
+    title: "AURA.AI",
+    description:
+      "A real-time SaaS analytics dashboard featuring AI-driven revenue forecasting, active user telemetry, conversion tracking, and infrastructure performance monitoring.",
+    tags: ["UI/UX Design", "Figma", "SaaS Dashboard", "Data Visualization"],
+    keywords: ["SaaS", "Dashboard", "Analytics", "Dark Mode UI"],
+    mediaBg: "#0C0D14",
+    image: "/aura.PNG",
+    screenshots: ["/aura.PNG"],
+    cta: { label: "View Live Project", href: "https://aura-ai-bice-three.vercel.app/" },
+  },
+  {
+    num: "09",
+    category: "Design",
+    status: "STOREFRONT DESIGN",
+    title: "VELOUR",
+    description:
+      "A luxury fashion and editorial e-commerce concept showcasing seasonal curation, refined typography, and an interactive slide-out cart drawer with seamless coupon redemption.",
+    tags: ["E-Commerce UI", "Figma", "Luxury Branding", "Cart Experience"],
+    keywords: ["Luxury", "E-Commerce", "Editorial Design", "Storefront"],
+    mediaBg: "#2B2824",
+    image: "/velour.PNG",
+    screenshots: ["/velour.PNG"],
+    cta: { label: "View Live Project", href: "https://luxury-e-commerce-storefront-mockup.vercel.app/" },
   },
 ];
 
@@ -728,10 +757,13 @@ function ProjectRow({
 
       {/* Gallery Modal */}
       {isGalleryOpen && project.screenshots && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#111111]/95 p-4 md:p-10 backdrop-blur-sm">
+        <div 
+          onClick={() => setIsGalleryOpen(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#111111]/95 p-4 md:p-10 backdrop-blur-sm cursor-pointer"
+        >
           <button
             onClick={() => setIsGalleryOpen(false)}
-            className="absolute top-6 right-6 text-white hover:text-[#245EE8] transition-colors focus:outline-none p-2"
+            className="absolute top-6 right-6 text-white hover:text-[#245EE8] transition-colors focus:outline-none p-2 cursor-pointer z-10"
             aria-label="Close gallery"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -742,8 +774,8 @@ function ProjectRow({
 
           {project.screenshots.length > 1 && (
             <button
-              onClick={handlePrev}
-              className="absolute left-4 md:left-10 text-white hover:text-[#245EE8] transition-colors focus:outline-none p-2"
+              onClick={(e) => { e.stopPropagation(); handlePrev(); }}
+              className="absolute left-4 md:left-10 text-white hover:text-[#245EE8] transition-colors focus:outline-none p-2 cursor-pointer z-10"
               aria-label="Previous image"
             >
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -752,7 +784,10 @@ function ProjectRow({
             </button>
           )}
 
-          <div className="max-w-6xl w-full flex flex-col items-center">
+          <div 
+            className="max-w-6xl w-full flex flex-col items-center cursor-default"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img 
               src={project.screenshots[currentImageIndex]} 
               alt={`${project.title} screenshot ${currentImageIndex + 1}`}
