@@ -157,6 +157,20 @@ const PROJECTS: Project[] = [
     screenshots: ["/velour.PNG"],
     cta: { label: "View Live Project", href: "https://luxury-e-commerce-storefront-mockup.vercel.app/" },
   },
+  {
+    num: "10",
+    category: "Design",
+    status: "AI CONCEPT & UI",
+    title: "AETHER SUV",
+    description:
+      "A collaborative design interface for cinematic AI concept art and advertising campaigns, featuring live prompt parameters, artboard variant generation, and digital ad mockups.",
+    tags: ["UI/UX Design", "Figma", "AI Concept Art", "Campaign Deck"],
+    keywords: ["AI Concept", "Figma UI", "Automotive", "Ad Mockup"],
+    mediaBg: "#0F1117",
+    image: "/aether_suv.PNG",
+    screenshots: ["/aether_suv.PNG"],
+    cta: { label: "View Live Project", href: "https://cinematic-ai-concept-art.vercel.app/" },
+  },
 ];
 
 const CAPABILITIES = [
