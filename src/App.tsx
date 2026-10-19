@@ -12,8 +12,7 @@ const CATEGORIES = [
   { id: "all", label: "All Work" },
   { id: "shopify", label: "Shopify / E-Commerce" },
   { id: "web", label: "Web Applications" },
-  { id: "mobile", label: "Mobile Apps" },
-  { id: "design", label: "UI/UX & Design" },
+  { id: "design", label: "UI/UX & Graphic Design" },
 ];
 
 type Project = {
@@ -64,13 +63,13 @@ const PROJECTS: Project[] = [
   },
   {
     num: "03",
-    category: "Mobile",
+    category: "Web",
     status: "UNDER CONSTRUCTION",
     title: "PisoTrack",
     description:
-      "PisoTrack is a mobile personal finance application that helps users monitor daily expenses and manage budgets. Built to simplify financial tracking, I developed the core UI components and integrated local data persistence to ensure a seamless, offline-first user experience.",
-    tags: ["Kotlin", "Jetpack Compose", "Room Database"],
-    keywords: ["Expense Tracking", "Personal Finance", "Offline-first"],
+      "PisoTrack is a personal finance web application that helps users monitor daily expenses and manage budgets. Built to simplify financial tracking, I developed responsive UI components and state management to ensure an intuitive user experience.",
+    tags: ["React", "Tailwind CSS", "Web App", "Finance UI"],
+    keywords: ["Expense Tracking", "Personal Finance", "Web App"],
     mediaBg: "#2A3830",
     image: "/PisoTrack_landing_page.PNG",
     cta: { label: "View Project", href: "https://piso-track.vercel.app/" },
@@ -175,8 +174,8 @@ const PROJECTS: Project[] = [
 
 const CAPABILITIES = [
   {
-    area: "Web Development",
-    items: ["React & Next.js", "Tailwind CSS", "PHP & MySQL", "JavaScript", "HTML & CSS"],
+    area: "Web Applications",
+    items: ["React & Next.js", "Tailwind CSS", "PHP & MySQL", "REST APIs", "JavaScript / HTML / CSS"],
   },
   {
     area: "Shopify & E-Commerce",
@@ -184,13 +183,19 @@ const CAPABILITIES = [
       "Shopify Liquid",
       "Theme Customization",
       "Store Setup & Launch",
-      "App Integrations",
+      "Cart & Checkout UX",
       "Conversion & Speed Optimization",
     ],
   },
   {
-    area: "Mobile & Backend",
-    items: ["React Native", "Expo", "REST APIs", "Web APIs", "Systems Analysis"],
+    area: "UI/UX & Graphic Design",
+    items: [
+      "Figma & Prototyping",
+      "UI Design Systems",
+      "E-Commerce & SaaS Mockups",
+      "Brand Identity & Graphics",
+      "Campaign & Art Direction",
+    ],
   },
   {
     area: "IT & Infrastructure",
@@ -206,7 +211,7 @@ const CAPABILITIES = [
     area: "Workflow",
     items: [
       "Version Control (Git)",
-      "Code Review",
+      "Design-to-Code Handoff",
       "Technical Writing",
       "Cross-team Collaboration",
       "Problem Diagnosis",
@@ -385,18 +390,18 @@ export default function App() {
               >
                 <span className="block text-[#111111]">Web</span>
                 <span className="block text-[#111111]">Developer &</span>
-                <span className="block text-[#A9A9A9]">Mobile App</span>
-                <span className="block text-[#A9A9A9]">Builder.</span>
+                <span className="block text-[#A9A9A9]">UI/UX</span>
+                <span className="block text-[#A9A9A9]">Designer.</span>
               </h1>
               <div className="max-w-[520px] mb-10 flex flex-col gap-5">
                 <p className="font-[Manrope] text-[18px] leading-[1.6] text-[#111111]">
-                  I'm a web and mobile app developer focused on building reliable systems and continuously expanding my understanding of software development.
+                  I'm a web developer and UI/UX designer focused on building responsive web applications, high-converting e-commerce storefronts, and intuitive digital interfaces.
                 </p>
                 <p className="font-[Manrope] text-[15px] leading-relaxed text-[#737B88]">
-                  My hands-on experience centers on modern frontend tools like React, Next.js, and Tailwind CSS, alongside backend technologies like PHP and MySQL. I also build mobile interfaces and robust data layers using React Native, Expo, Web APIs, and REST APIs.
+                  My hands-on experience bridges modern web development (React, Next.js, Tailwind CSS, PHP, MySQL, and Shopify Liquid) with visual design in Figma—from wireframing and design systems to brand identity, marketing mockups, and campaign art.
                 </p>
                 <p className="font-[Manrope] text-[15px] leading-relaxed text-[#737B88]">
-                  I use AI-assisted development as part of my workflow for research, implementation, debugging, and iteration — while taking ownership of architecture, technical decisions, validation, and the final product.
+                  I take projects from initial visual concept and creative direction all the way to clean, production-ready code—using AI-assisted workflows for rapid prototyping, research, and validation.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
